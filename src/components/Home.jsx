@@ -20,6 +20,18 @@ const followerSets = [
   { followers: 54000, views: 210000 },
   { followers: 78000, views: 340000 },
 ];
+const campaigns = [
+  "Summer Collection Launch",
+  "Winter Wear Drop",
+  "Festive Sale Campaign",
+];
+
+const campaignStats = [
+  { creators: 12, reach: "1.2M" },
+  { creators: 18, reach: "2.4M" },
+  { creators: 9, reach: "900K" },
+];
+
 const tiltStyle = {
   background: "rgba(255,255,255,0.7)",
   backdropFilter: "blur(14px)",
@@ -31,6 +43,16 @@ export default function Home() {
   const [brandIndex, setBrandIndex] = useState(0);
   const [creatorIndex, setCreatorIndex] = useState(0);
   const [statsIndex, setStatsIndex] = useState(0);
+  const [campaignIndex, setCampaignIndex] = useState(0);
+
+useEffect(() => {
+  const i = setInterval(
+    () => setCampaignIndex((p) => (p + 1) % campaigns.length),
+    3000
+  );
+  return () => clearInterval(i);
+}, []);
+
   useEffect(() => {
     const c = setInterval(
       () => setCreatorIndex((p) => (p + 1) % creators.length),
@@ -428,7 +450,23 @@ export default function Home() {
   "
             >
               <p className="text-xs text-gray-500">Active Deal</p>
-              <h4 className="font-semibold text-gray-900 mt-1">Brand XYZ</h4>
+
+              {/* 🔄 Auto-changing Brand Name */}
+              <div className="relative h-6 overflow-hidden mt-1">
+                <AnimatePresence mode="wait">
+                  <motion.h4
+                    key={brandIndex}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.35 }}
+                    className="absolute left-0 top-0 font-semibold text-gray-900"
+                  >
+                    {brands[brandIndex]}
+                  </motion.h4>
+                </AnimatePresence>
+              </div>
+
               <p className="text-xs text-gray-600 mt-1">Reel Collaboration</p>
 
               <span className="inline-block mt-2 text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">
@@ -442,37 +480,77 @@ export default function Home() {
       {/* FOR BRANDS */}
       <section className="py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div className="w-full h-full rounded-3xl bg-gradient-to-br from-purple-100 to-blue-100 p-6 flex flex-col justify-between">
-            <div>
-              <p className="text-xs text-gray-500">Campaign Preview</p>
-              <h3 className="text-xl font-semibold text-gray-900 mt-1">
-                Summer Collection Launch
-              </h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Fashion • Instagram Reels
-              </p>
-            </div>
+          <motion.div
+  whileHover={{ rotateX: 5, rotateY: -5, scale: 1.03 }}
+  animate={{ y: [0, -8, 0] }}
+  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+  style={{
+    background: "rgba(255,255,255,0.6)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    transformStyle: "preserve-3d",
+  }}
+  className="w-full h-full rounded-3xl p-6 flex flex-col justify-between shadow-lg"
+>
+  {/* Header */}
+  <div>
+    <p className="text-xs text-gray-500">Campaign Preview</p>
 
-            <div className="grid grid-cols-2 gap-3 mt-4">
-              <div className="bg-white rounded-xl p-3 shadow-sm">
-                <p className="text-xs text-gray-500">Creators</p>
-                <p className="text-lg font-semibold">12</p>
-              </div>
-              <div className="bg-white rounded-xl p-3 shadow-sm">
-                <p className="text-xs text-gray-500">Reach</p>
-                <p className="text-lg font-semibold">1.2M</p>
-              </div>
-            </div>
+    {/* 🔄 Auto-changing campaign name */}
+    <div className="relative h-7 overflow-hidden mt-1">
+      <AnimatePresence mode="wait">
+        <motion.h3
+          key={campaignIndex}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35 }}
+          className="absolute left-0 top-0 text-xl font-semibold text-gray-900"
+        >
+          {campaigns[campaignIndex]}
+        </motion.h3>
+      </AnimatePresence>
+    </div>
 
-            <div className="flex gap-2 mt-4">
-              <span className="text-xs px-3 py-1 bg-purple-500 text-white rounded-full">
-                Live
-              </span>
-              <span className="text-xs px-3 py-1 bg-green-100 text-green-600 rounded-full">
-                On Track
-              </span>
-            </div>
-          </div>
+    <p className="text-sm text-gray-600 mt-2">
+      Fashion • Instagram Reels
+    </p>
+  </div>
+
+  {/* Stats */}
+  <div className="grid grid-cols-2 gap-3 mt-4">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-white rounded-xl p-3 shadow-sm"
+    >
+      <p className="text-xs text-gray-500">Creators</p>
+      <p className="text-lg font-semibold">
+        {campaignStats[campaignIndex].creators}
+      </p>
+    </motion.div>
+
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-white rounded-xl p-3 shadow-sm"
+    >
+      <p className="text-xs text-gray-500">Reach</p>
+      <p className="text-lg font-semibold">
+        {campaignStats[campaignIndex].reach}
+      </p>
+    </motion.div>
+  </div>
+
+  {/* Status */}
+  <div className="flex gap-2 mt-4">
+    <span className="text-xs px-3 py-1 bg-purple-500 text-white rounded-full">
+      Live
+    </span>
+    <span className="text-xs px-3 py-1 bg-green-100 text-green-600 rounded-full">
+      On Track
+    </span>
+  </div>
+</motion.div>
+
 
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900">
