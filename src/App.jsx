@@ -11,6 +11,9 @@ import { Routes, Route } from "react-router-dom";
 import JoinCreator from "./components/JoinCreator";
 import ApplyCreator from "./components/ApplyCreator";
 import WorkWithUs from "./components/WorkWithUs";
+import StartCampaign from "./components/Compaign";
+import CampaignThankYou from "./components/CompaignThankyou";
+import CreatorThankYou from "./components/CreatorThankyou";
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/join-creator" element={<JoinCreator />} />
           <Route path="/work-with-us" element={<WorkWithUs />} />
+          <Route path="/start-compaign" element={<StartCampaign />} />
+          <Route path="/campaign-success" element={<CampaignThankYou />} />
+          <Route path="/apply-success" element={<CreatorThankYou />} />
           <Route path="/apply-creator" element={<ApplyCreator />} />
         </Routes>
       </main>

@@ -1,44 +1,52 @@
+import { Link } from "react-router-dom";
+import { BrandFAQ } from "./BrandFAQ";
+
 export default function WorkWithUs() {
   return (
     <main className="pt-24">
 
       {/* HERO */}
       <section className="bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
             Work With BrandNest
           </h1>
-          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
             We help brands grow through the right creators, powerful content,
             and well-managed influencer campaigns.
+          </p>
+
+          {/* Trust line */}
+          <p className="mt-3 text-xs text-gray-500">
+            ✔ Creator-first • ✔ Quality-focused • ✔ Transparent execution
           </p>
         </div>
       </section>
 
       {/* PROBLEM + SOLUTION */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Why Brands Choose BrandNest
             </h2>
-            <ul className="mt-6 space-y-4 text-gray-600">
-              <li>• Finding the right creators is time-consuming</li>
-              <li>• Managing campaigns & follow-ups is messy</li>
-              <li>• Content often lacks quality & consistency</li>
-              <li>• Results don’t match expectations</li>
+
+            <ul className="mt-5 space-y-3 text-sm md:text-base text-gray-600">
+              <li>✔ Finding the right creators takes time</li>
+              <li>✔ Campaign coordination gets messy</li>
+              <li>✔ Content quality is inconsistent</li>
+              <li>✔ Results don’t meet expectations</li>
             </ul>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-900">
+          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900">
               Our Solution
             </h3>
-            <p className="mt-4 text-gray-600">
-              BrandNest manages creators, campaigns, and creatives end-to-end.
-              We focus on relevance, quality, and smooth execution — so your
-              brand gets real visibility and engagement.
+            <p className="mt-3 text-sm md:text-base text-gray-600">
+              We manage creators, campaigns, and creatives end-to-end —
+              focusing on relevance, quality, and smooth execution.
             </p>
           </div>
 
@@ -46,47 +54,49 @@ export default function WorkWithUs() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-50 py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
             What We Offer Brands
           </h2>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
               {
                 title: "Influencer Campaigns",
-                desc: "Creator-led campaigns designed for reach, trust, and engagement.",
+                desc: "Creator-led campaigns built for reach and trust.",
               },
               {
                 title: "Creator Shortlisting",
-                desc: "We match brands with creators that truly align with their audience.",
+                desc: "Thoughtful matching based on brand & audience fit.",
               },
               {
                 title: "Campaign Management",
-                desc: "From briefing to posting — we handle everything.",
+                desc: "From briefing to posting — fully handled.",
               },
               {
                 title: "Video Editing",
-                desc: "High-quality reels, shorts, and videos that stop the scroll.",
+                desc: "Scroll-stopping reels, shorts & videos.",
               },
               {
                 title: "Graphic Designing",
-                desc: "Clean, professional visuals for social media & ads.",
+                desc: "Clean visuals for social media & ads.",
               },
               {
                 title: "Content Strategy",
-                desc: "We help you plan content that supports your business goals.",
+                desc: "Content aligned with your business goals.",
               },
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition"
+                className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition"
               >
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-gray-600">{service.desc}</p>
+                <p className="mt-2 text-sm text-gray-600">
+                  {service.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -94,25 +104,25 @@ export default function WorkWithUs() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             How It Works
           </h2>
 
-          <div className="mt-10 grid md:grid-cols-5 gap-6">
+          <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-5 gap-4">
             {[
-              "Share Your Campaign Goal",
+              "Share Your Goal",
               "We Shortlist Creators",
               "Finalize Strategy",
               "Content Goes Live",
               "You Get Results",
             ].map((step, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                <span className="text-blue-500 font-bold text-xl">
+              <div key={index} className="bg-gray-50 p-5 rounded-xl shadow-sm">
+                <span className="text-blue-500 font-bold text-lg">
                   {index + 1}
                 </span>
-                <p className="mt-3 text-gray-700 text-sm">{step}</p>
+                <p className="mt-2 text-sm text-gray-700">{step}</p>
               </div>
             ))}
           </div>
@@ -120,16 +130,16 @@ export default function WorkWithUs() {
       </section>
 
       {/* PACKAGES */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-50 py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
             Campaign Packages
           </h2>
-          <p className="mt-4 text-center text-gray-600">
-            Flexible pricing based on your campaign goals and scale.
+          <p className="mt-3 text-sm md:text-base text-center text-gray-600">
+            Flexible pricing based on your goals and scale.
           </p>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
 
             <PackageCard
               title="Starter Campaign"
@@ -169,27 +179,32 @@ export default function WorkWithUs() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blue-500 py-20 text-center text-white">
-        <h2 className="text-3xl font-bold">
-          Ready to Start a Campaign?
-        </h2>
-        <p className="mt-4 max-w-xl mx-auto">
-          Tell us about your brand and we’ll help you plan the right campaign.
-        </p>
+      <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
+        <div className="max-w-xl mx-auto px-6">
 
-        <a
-          href="/contact"
-          className="inline-block mt-8 px-8 py-3 bg-white text-blue-500 rounded-full font-medium"
-        >
-          Start a Campaign
-        </a>
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Ready to Start a Campaign?
+          </h2>
+
+          <p className="mt-3 text-sm md:text-base text-blue-100">
+            Tell us about your brand and we’ll plan the right campaign.
+          </p>
+
+          <Link
+            to="/start-compaign"
+            className="block w-full mt-8 px-6 py-3 bg-white text-blue-500 rounded-full font-medium shadow-sm"
+          >
+            Start a Campaign
+          </Link>
+
+        </div>
       </section>
-
+      <BrandFAQ/>
     </main>
   );
 }
 
-/* Package Card Component */
+/* PACKAGE CARD */
 function PackageCard({ title, price, points, highlight }) {
   return (
     <div
@@ -197,11 +212,11 @@ function PackageCard({ title, price, points, highlight }) {
         highlight ? "bg-blue-500 text-white" : "bg-white"
       }`}
     >
-      <h3 className="text-xl font-semibold">{title}</h3>
+      <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 font-medium">{price}</p>
       <ul className="mt-4 space-y-2 text-sm">
         {points.map((point, index) => (
-          <li key={index}>• {point}</li>
+          <li key={index}>✔ {point}</li>
         ))}
       </ul>
     </div>
