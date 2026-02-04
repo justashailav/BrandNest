@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import CreatorGuarantee from "./CreatorGaurantee";
 import FitScore from "./FitScore";
 import { CreatorFAQ } from "./CreatorFAQ";
-
+import { motion, AnimatePresence } from "framer-motion";
 export default function JoinCreator() {
   return (
     <main className="pt-24">
-
       {/* HERO */}
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
@@ -14,8 +13,8 @@ export default function JoinCreator() {
             Join BrandNest as a Creator
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
-            We manage creators and bring genuine brand collaborations —
-            so you can focus on creating, not chasing deals.
+            We manage creators and bring genuine brand collaborations — so you
+            can focus on creating, not chasing deals.
           </p>
 
           {/* Trust line */}
@@ -28,7 +27,6 @@ export default function JoinCreator() {
       {/* WHY JOIN */}
       <section className="py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Why Join BrandNest?
@@ -43,12 +41,91 @@ export default function JoinCreator() {
             </ul>
           </div>
 
-          <div className="hidden md:flex">
-            <div className="w-full h-64 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-500 font-medium">
-              Creator Growth
-            </div>
-          </div>
+          {/* CREATOR GROWTH */}
+          {/* CREATOR GROWTH VISUAL */}
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="
+    relative w-full rounded-3xl
+    bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50
+    p-6 md:p-8
+  "
+          >
+            {/* Main Card */}
+            <div className="bg-white rounded-2xl shadow-md p-6 space-y-6">
+              {/* Stats Row */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <p className="text-xs text-gray-500">Followers</p>
+                  <p className="text-xl font-semibold text-gray-900 mt-1">
+                    +120%
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-xs text-gray-500">Avg Views</p>
+                  <p className="text-xl font-semibold text-gray-900 mt-1">
+                    +95%
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-xs text-gray-500">Brand Deals</p>
+                  <p className="text-xl font-semibold text-gray-900 mt-1">
+                    +3x
+                  </p>
+                </div>
+              </div>
 
+              {/* Divider */}
+              <div className="h-px bg-gray-200" />
+
+              {/* Progress Bars */}
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between text-xs text-gray-500 mb-1">
+                    <span>Engagement Growth</span>
+                    <span>80%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <motion.div
+                      animate={{ width: ["40%", "80%", "40%"] }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="h-full bg-blue-500 rounded-full"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs text-gray-500 mb-1">
+                    <span>Audience Trust</span>
+                    <span>90%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <motion.div
+                      animate={{ width: ["50%", "90%", "50%"] }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="h-full bg-purple-500 rounded-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="pt-2 text-center">
+                <span className="inline-block text-xs px-4 py-1 bg-gray-100 rounded-full">
+                  Growth powered by BrandNest
+                </span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -93,9 +170,7 @@ export default function JoinCreator() {
                 <h3 className="text-lg font-semibold text-gray-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  {item.desc}
-                </p>
+                <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -110,8 +185,8 @@ export default function JoinCreator() {
           </h2>
 
           <p className="mt-4 text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
-            Follower count matters less than content quality, consistency,
-            and audience trust.
+            Follower count matters less than content quality, consistency, and
+            audience trust.
           </p>
 
           <div className="mt-8 grid sm:grid-cols-2 gap-6 text-left max-w-4xl mx-auto text-sm md:text-base text-gray-600">
@@ -163,8 +238,8 @@ export default function JoinCreator() {
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm text-gray-600">
-            Joining BrandNest is <strong>100% free</strong>.  
-            We always take creator approval before confirming any collaboration.
+            Joining BrandNest is <strong>100% free</strong>. We always take
+            creator approval before confirming any collaboration.
           </p>
         </div>
       </section>
@@ -175,7 +250,6 @@ export default function JoinCreator() {
       {/* FINAL CTA */}
       <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
         <div className="max-w-xl mx-auto px-6">
-
           <h2 className="text-2xl md:text-3xl font-bold">
             Ready to Join BrandNest?
           </h2>
@@ -190,10 +264,9 @@ export default function JoinCreator() {
           >
             Apply as a Creator
           </Link>
-
         </div>
       </section>
-      <CreatorFAQ/>
+      <CreatorFAQ />
     </main>
   );
 }

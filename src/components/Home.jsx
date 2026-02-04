@@ -45,13 +45,13 @@ export default function Home() {
   const [statsIndex, setStatsIndex] = useState(0);
   const [campaignIndex, setCampaignIndex] = useState(0);
 
-useEffect(() => {
-  const i = setInterval(
-    () => setCampaignIndex((p) => (p + 1) % campaigns.length),
-    3000
-  );
-  return () => clearInterval(i);
-}, []);
+  useEffect(() => {
+    const i = setInterval(
+      () => setCampaignIndex((p) => (p + 1) % campaigns.length),
+      3000,
+    );
+    return () => clearInterval(i);
+  }, []);
 
   useEffect(() => {
     const c = setInterval(
@@ -481,76 +481,75 @@ useEffect(() => {
       <section className="py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-  whileHover={{ rotateX: 5, rotateY: -5, scale: 1.03 }}
-  animate={{ y: [0, -8, 0] }}
-  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-  style={{
-    background: "rgba(255,255,255,0.6)",
-    backdropFilter: "blur(16px)",
-    WebkitBackdropFilter: "blur(16px)",
-    transformStyle: "preserve-3d",
-  }}
-  className="w-full h-full rounded-3xl p-6 flex flex-col justify-between shadow-lg"
->
-  {/* Header */}
-  <div>
-    <p className="text-xs text-gray-500">Campaign Preview</p>
+            whileHover={{ rotateX: 5, rotateY: -5, scale: 1.03 }}
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              background: "rgba(255,255,255,0.6)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              transformStyle: "preserve-3d",
+            }}
+            className="w-full h-full rounded-3xl p-6 flex flex-col justify-between shadow-lg"
+          >
+            {/* Header */}
+            <div>
+              <p className="text-xs text-gray-500">Campaign Preview</p>
 
-    {/* 🔄 Auto-changing campaign name */}
-    <div className="relative h-7 overflow-hidden mt-1">
-      <AnimatePresence mode="wait">
-        <motion.h3
-          key={campaignIndex}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.35 }}
-          className="absolute left-0 top-0 text-xl font-semibold text-gray-900"
-        >
-          {campaigns[campaignIndex]}
-        </motion.h3>
-      </AnimatePresence>
-    </div>
+              {/* 🔄 Auto-changing campaign name */}
+              <div className="relative h-7 overflow-hidden mt-1">
+                <AnimatePresence mode="wait">
+                  <motion.h3
+                    key={campaignIndex}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.35 }}
+                    className="absolute left-0 top-0 text-xl font-semibold text-gray-900"
+                  >
+                    {campaigns[campaignIndex]}
+                  </motion.h3>
+                </AnimatePresence>
+              </div>
 
-    <p className="text-sm text-gray-600 mt-2">
-      Fashion • Instagram Reels
-    </p>
-  </div>
+              <p className="text-sm text-gray-600 mt-2">
+                Fashion • Instagram Reels
+              </p>
+            </div>
 
-  {/* Stats */}
-  <div className="grid grid-cols-2 gap-3 mt-4">
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-xl p-3 shadow-sm"
-    >
-      <p className="text-xs text-gray-500">Creators</p>
-      <p className="text-lg font-semibold">
-        {campaignStats[campaignIndex].creators}
-      </p>
-    </motion.div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-3 mt-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-xl p-3 shadow-sm"
+              >
+                <p className="text-xs text-gray-500">Creators</p>
+                <p className="text-lg font-semibold">
+                  {campaignStats[campaignIndex].creators}
+                </p>
+              </motion.div>
 
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-xl p-3 shadow-sm"
-    >
-      <p className="text-xs text-gray-500">Reach</p>
-      <p className="text-lg font-semibold">
-        {campaignStats[campaignIndex].reach}
-      </p>
-    </motion.div>
-  </div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-xl p-3 shadow-sm"
+              >
+                <p className="text-xs text-gray-500">Reach</p>
+                <p className="text-lg font-semibold">
+                  {campaignStats[campaignIndex].reach}
+                </p>
+              </motion.div>
+            </div>
 
-  {/* Status */}
-  <div className="flex gap-2 mt-4">
-    <span className="text-xs px-3 py-1 bg-purple-500 text-white rounded-full">
-      Live
-    </span>
-    <span className="text-xs px-3 py-1 bg-green-100 text-green-600 rounded-full">
-      On Track
-    </span>
-  </div>
-</motion.div>
-
+            {/* Status */}
+            <div className="flex gap-2 mt-4">
+              <span className="text-xs px-3 py-1 bg-purple-500 text-white rounded-full">
+                Live
+              </span>
+              <span className="text-xs px-3 py-1 bg-green-100 text-green-600 rounded-full">
+                On Track
+              </span>
+            </div>
+          </motion.div>
 
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900">
