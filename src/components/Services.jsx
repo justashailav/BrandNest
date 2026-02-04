@@ -51,7 +51,7 @@ export default function Services() {
 
       {/* CORE SERVICES */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
             What We Offer
           </h2>
@@ -128,7 +128,7 @@ export default function Services() {
 
       {/* FOR CREATORS */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Services for Creators
@@ -233,7 +233,7 @@ export default function Services() {
 
       {/* FOR BRANDS */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}

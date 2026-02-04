@@ -112,7 +112,7 @@ export default function Home() {
     <main className="pt-24">
       {/* HERO SECTION */}
       <section className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 py-14 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 grid md:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -326,7 +326,7 @@ export default function Home() {
 
       {/* FOR CREATORS */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900">
               Built for Creators
@@ -479,7 +479,7 @@ export default function Home() {
 
       {/* FOR BRANDS */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             whileHover={{ rotateX: 5, rotateY: -5, scale: 1.03 }}
             animate={{ y: [0, -8, 0] }}
@@ -576,7 +576,7 @@ export default function Home() {
 
       {/* SERVICES */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
             Our Services
           </h2>
