@@ -26,7 +26,7 @@ export default function Projects() {
 
       {/* VIDEO WORK */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
             Video Editing
           </h2>
@@ -56,7 +56,7 @@ export default function Projects() {
 
       {/* DESIGN WORK */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
             Graphic Designing
           </h2>
@@ -86,7 +86,7 @@ export default function Projects() {
 
       {/* CREATOR CAMPAIGNS */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
             Creator Campaign Concepts
           </h2>

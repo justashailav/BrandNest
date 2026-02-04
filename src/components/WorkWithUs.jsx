@@ -25,7 +25,7 @@ export default function WorkWithUs() {
 
       {/* PROBLEM + SOLUTION */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -55,7 +55,7 @@ export default function WorkWithUs() {
 
       {/* SERVICES */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
             What We Offer Brands
           </h2>
@@ -131,7 +131,7 @@ export default function WorkWithUs() {
 
       {/* PACKAGES */}
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
             Campaign Packages
           </h2>

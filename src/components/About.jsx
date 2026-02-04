@@ -57,7 +57,7 @@ export default function About() {
 
       {/* WHO WE ARE */}
       <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Who We Are
