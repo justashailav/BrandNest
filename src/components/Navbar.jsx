@@ -71,9 +71,9 @@ export default function Navbar() {
           <div className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white shadow-xl p-6 animate-slideIn">
             {/* Header */}
             <div className="flex items-center justify-between mb-10">
-              <span className="text-2xl font-bold tracking-wide text-green-700 group-hover:text-green-800 transition">
-            Thrive
-          </span>
+              <span className="text-3xl font-extrabold bg-gradient-to-r from-green-700 to-lime-500 bg-clip-text text-transparent">
+    Thrive
+  </span>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-2xl text-gray-600 hover:text-gray-900"
