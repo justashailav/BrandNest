@@ -8,17 +8,18 @@ export default function Navbar() {
     <nav className="w-full bg-white border-b border-gray-200 fixed top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src={logo}
-            alt="Thrive Logo"
-            className="h-16 md:h-18 w-auto object-contain"
-          />
+        <Link to="/" className="flex items-center gap-2 group">
+  <img
+    src={logo}
+    alt="Thrive Logo"
+    className="h-14 w-auto object-contain"
+  />
 
-          <span className="text-2xl font-bold tracking-wide text-green-700 group-hover:text-green-800 transition">
-            Thrive
-          </span>
-        </Link>
+  <span className="text-3xl font-extrabold bg-gradient-to-r from-green-700 to-lime-500 bg-clip-text text-transparent">
+    Thrive
+  </span>
+</Link>
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
