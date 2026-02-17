@@ -11,7 +11,7 @@ export default function CreatorThankYou() {
           </h1>
 
           <p className="mt-4 text-gray-600">
-            Thank you for applying to BrandNest.  
+            Thank you for applying to Thrive.  
             Our team will review your profile and reach out if you’re shortlisted.
           </p>
 

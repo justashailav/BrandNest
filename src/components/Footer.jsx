@@ -5,14 +5,12 @@ const Footer = () => {
 
         {/* BRAND */}
         <div>
-          <h3 className="text-white text-lg font-semibold">BrandNest</h3>
+          <h3 className="text-white text-lg font-semibold">Thrive</h3>
           <p className="mt-3 text-sm text-gray-400 leading-relaxed">
             A creator management & creative agency helping creators and brands
             grow through meaningful collaborations.
           </p>
         </div>
-
-        {/* QUICK LINKS */}
         <div>
           <p className="text-white text-sm font-medium">Company</p>
           <ul className="mt-3 space-y-2 text-sm">
@@ -61,7 +59,7 @@ const Footer = () => {
           <p className="text-white text-sm font-medium">Connect</p>
 
           <ul className="mt-3 space-y-2 text-sm">
-            <li className="text-gray-400">📩 brandnestworks@gmail.com</li>
+            <li className="text-gray-400">📩 thrive.creatorshub@gmail.com</li>
             <li className="text-gray-400">📍 India</li>
           </ul>
 
@@ -96,7 +94,7 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} BrandNest. All rights reserved.
+            © {new Date().getFullYear()} Thrive. All rights reserved.
           </p>
 
           <div className="flex gap-4 text-xs">

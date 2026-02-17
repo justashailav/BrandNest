@@ -6,7 +6,7 @@ export default function ApplyCreator() {
     const form = e.target;
 
     const message = `
-📩 *New Creator Application – BrandNest*
+📩 *New Creator Application – Thrive*
 
 👤 Name: ${form.fullName.value}
 📧 Email: ${form.email.value}
@@ -39,7 +39,7 @@ ${form.notes.value || "N/A"}
           </h1>
 
           <p className="mt-4 text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-            Join BrandNest and get access to genuine brand collaborations.
+            Join Thrive and get access to genuine brand collaborations.
             We manage deals so you can focus on creating content.
           </p>
 
@@ -103,7 +103,7 @@ ${form.notes.value || "N/A"}
           </div>
 
           <p className="mt-6 text-center text-xs md:text-sm text-gray-500">
-            Joining BrandNest is completely free.  
+            Joining Thrive is completely free.  
             We review applications carefully and contact shortlisted creators only.
           </p>
 

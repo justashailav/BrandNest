@@ -6,7 +6,7 @@ export default function Contact() {
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Contact BrandNest
+            Contact Thrive
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate?
@@ -80,7 +80,7 @@ export default function Contact() {
             </p>
 
             <div className="mt-6 space-y-3 text-sm md:text-base text-gray-700">
-              <p>📧 <strong>Email:</strong> brandnestworks@gmail.com</p>
+              <p>📧 <strong>Email:</strong> thrive.creatorshub@gmail.com</p>
               <p>📱 <strong>WhatsApp:</strong> +91 9015118744</p>
               <p>🌍 <strong>Location:</strong> India (Working Globally)</p>
             </div>

@@ -15,7 +15,7 @@ export default function CreatorGuarantee() {
 
         {/* Description */}
         <p className="mt-4 text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
-          At BrandNest, no brand collaboration is confirmed without the creator’s
+          At Thrive, no brand collaboration is confirmed without the creator’s
           clear approval. You stay in control of what you promote and who you
           work with — always.
         </p>

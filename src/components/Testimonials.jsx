@@ -4,13 +4,13 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-6 text-center">
 
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-          What People Say About BrandNest
+          What People Say About Thrive
         </h2>
 
         <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
           {[
             {
-              text: "BrandNest made collaborations stress-free. Clear communication and fair deals.",
+              text: "Thrive made collaborations stress-free. Clear communication and fair deals.",
               role: "Lifestyle Creator",
             },
             {

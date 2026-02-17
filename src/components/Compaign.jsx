@@ -4,7 +4,7 @@ export default function StartCampaign() {
     const form = e.target;
 
     const message = `
-🚀 *New Campaign Request – BrandNest*
+🚀 *New Campaign Request – Thrive*
 
 🏢 Brand: ${form.brand.value}
 🌐 Website / Handle: ${form.website.value}
@@ -35,7 +35,7 @@ ${form.notes.value || "N/A"}
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Start Your Campaign with BrandNest
+            Start Your Campaign with Thrive
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
             Share your campaign goals and brand details. We’ll plan the right

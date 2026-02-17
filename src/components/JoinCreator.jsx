@@ -10,7 +10,7 @@ export default function JoinCreator() {
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Join BrandNest as a Creator
+            Join Thrive as a Creator
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
             We manage creators and bring genuine brand collaborations — so you
@@ -29,7 +29,7 @@ export default function JoinCreator() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Why Join BrandNest?
+              Why Join Thrive?
             </h2>
 
             <ul className="mt-5 space-y-3 text-sm md:text-base text-gray-600">
@@ -121,7 +121,7 @@ export default function JoinCreator() {
               {/* Footer */}
               <div className="pt-2 text-center">
                 <span className="inline-block text-xs px-4 py-1 bg-gray-100 rounded-full">
-                  Growth powered by BrandNest
+                  Growth powered by Thrive
                 </span>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function JoinCreator() {
 
           <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-5 gap-4">
             {[
-              "Apply to BrandNest",
+              "Apply to Thrive",
               "Get Verified",
               "Receive Opportunities",
               "Accept What You Like",
@@ -238,7 +238,7 @@ export default function JoinCreator() {
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm text-gray-600">
-            Joining BrandNest is <strong>100% free</strong>. We always take
+            Joining Thrive is <strong>100% free</strong>. We always take
             creator approval before confirming any collaboration.
           </p>
         </div>
@@ -251,7 +251,7 @@ export default function JoinCreator() {
       <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
         <div className="max-w-xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold">
-            Ready to Join BrandNest?
+            Ready to Join Thrive?
           </h2>
 
           <p className="mt-3 text-sm md:text-base text-blue-100">

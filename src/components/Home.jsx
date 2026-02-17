@@ -128,11 +128,12 @@ export default function Home() {
             {/* CTA */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link
-                to="/work-with-us"
-                className="px-6 py-3 bg-blue-500 text-white rounded-full font-medium text-center hover:bg-blue-600 transition"
-              >
-                Work With BrandNest
-              </Link>
+  to="/work-with-us"
+  className="px-6 py-3 bg-blue-500 text-white rounded-full font-medium text-center hover:bg-blue-600 transition"
+>
+  Work With Thrive
+</Link>
+
               <Link
                 to="/join-creator"
                 className="px-6 py-3 border border-blue-500 text-blue-500 rounded-full font-medium text-center hover:bg-blue-50 transition"
@@ -607,8 +608,9 @@ export default function Home() {
       <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
         <div className="max-w-xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold leading-snug">
-            Ready to Grow With BrandNest?
-          </h2>
+  Ready to Grow With Thrive?
+</h2>
+
           <p className="mt-3 text-sm md:text-base text-blue-100">
             Let’s build meaningful creator partnerships and brand campaigns.
           </p>

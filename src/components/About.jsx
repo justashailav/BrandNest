@@ -46,7 +46,7 @@ export default function About() {
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-            About BrandNest
+            About Thrive
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
             Building meaningful partnerships between brands and creators through
@@ -64,7 +64,7 @@ export default function About() {
             </h2>
 
             <p className="mt-4 text-gray-600">
-              BrandNest is a creator management and creative agency built to
+              Thrive is a creator management and creative agency built to
               simplify influencer marketing for both brands and creators.
             </p>
 
@@ -88,7 +88,7 @@ export default function About() {
 
             <div className="relative z-10 flex flex-col items-center gap-6">
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-md px-6 py-5 min-w-[260px] text-center">
-                <p className="text-xs text-gray-500">About BrandNest</p>
+                <p className="text-xs text-gray-500">About Thrive</p>
 
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -132,7 +132,7 @@ export default function About() {
       <section className="bg-gray-50 py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900">
-            BrandNest Journey
+            Thrive Journey
           </h2>
 
           <div className="mt-10 grid md:grid-cols-4 gap-6">
@@ -168,12 +168,12 @@ export default function About() {
               A fair ecosystem for creators & brands
             </h3>
             <p className="mt-4 text-gray-600">
-              BrandNest was built to remove confusion, unfair pricing, and
+              Thrive was built to remove confusion, unfair pricing, and
               short-term thinking from influencer marketing. Creators deserve
               clarity. Brands deserve authenticity.
             </p>
             <p className="mt-4 text-sm text-gray-500">
-              — Founder, BrandNest
+              — Founder, Thrive
             </p>
           </motion.div>
         </div>

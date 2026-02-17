@@ -9,7 +9,7 @@ export default function WorkWithUs() {
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Work With BrandNest
+            Work With Thrive
           </h1>
           <p className="mt-4 text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
             We help brands grow through the right creators, powerful content,
@@ -29,7 +29,7 @@ export default function WorkWithUs() {
 
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Why Brands Choose BrandNest
+              Why Brands Choose Thrive
             </h2>
 
             <ul className="mt-5 space-y-3 text-sm md:text-base text-gray-600">

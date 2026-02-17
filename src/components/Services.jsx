@@ -222,7 +222,7 @@ export default function Services() {
   "
                 >
                   <p className="text-xs text-gray-600 whitespace-nowrap">
-                    Handled by BrandNest
+                    Handled by Thrive
                   </p>
                 </motion.div>
               </motion.div>
@@ -301,7 +301,7 @@ export default function Services() {
       "
               >
                 <p className="text-xs text-gray-600 whitespace-nowrap">
-                  Managed end-to-end by BrandNest
+                  Managed end-to-end by Thrive
                 </p>
               </motion.div>
             </div>
@@ -328,7 +328,7 @@ export default function Services() {
               to="/work-with-us"
               className="inline-block mt-6 px-6 py-3 border border-blue-500 text-blue-500 rounded-full font-medium hover:bg-blue-50 transition"
             >
-              Work With BrandNest
+              Work With Thrive
             </Link>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function Services() {
           </h2>
 
           <p className="mt-3 text-sm md:text-base text-blue-100">
-            BrandNest has solutions built for both brands and creators.
+            Thrive has solutions built for both brands and creators.
           </p>
 
           {/* Primary CTA */}
