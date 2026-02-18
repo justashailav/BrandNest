@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+
 import Testimonials from "./Testimonials";
 import {
   motion,
@@ -107,6 +109,73 @@ export default function Home() {
     animate: { y: [0, -8, 0] },
     transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
   };
+  const col1Ref = useRef(null);
+  const col2Ref = useRef(null);
+  const col3Ref = useRef(null);
+
+  useEffect(() => {
+    const startAutoScroll = (container, speed) => {
+      if (!container) return;
+
+      let frame;
+
+      const step = () => {
+        container.scrollTop += speed;
+
+        // infinite loop
+        if (container.scrollTop >= container.scrollHeight / 2) {
+          container.scrollTop = 0;
+        }
+
+        if (container.scrollTop <= 0) {
+          container.scrollTop = container.scrollHeight / 2;
+        }
+
+        frame = requestAnimationFrame(step);
+      };
+
+      frame = requestAnimationFrame(step);
+
+      return () => cancelAnimationFrame(frame);
+    };
+
+    const clean1 = startAutoScroll(col1Ref.current, 0.5); // UP
+    const clean2 = startAutoScroll(col2Ref.current, -0.5); // DOWN
+    const clean3 = startAutoScroll(col3Ref.current, 0.5); // UP
+
+    return () => {
+      clean1 && clean1();
+      clean2 && clean2();
+      clean3 && clean3();
+    };
+  }, []);
+  function Card({ type, name }) {
+    const isCreator = type === "creator";
+
+    return (
+      <div className="bg-white shadow-lg border border-gray-100 rounded-2xl p-4 hover:scale-105 transition duration-300">
+        <p className="text-xs text-gray-500">
+          {isCreator ? "Creator" : "Brand"}
+        </p>
+
+        <h4 className="font-semibold text-gray-900 mt-1">{name}</h4>
+
+        <p className="text-xs text-gray-600 mt-1">
+          {isCreator ? "Lifestyle • Reels" : "Campaign • Reels"}
+        </p>
+
+        <span
+          className={`inline-block mt-2 text-xs px-2 py-1 rounded-full ${
+            isCreator
+              ? "bg-green-100 text-green-600"
+              : "bg-blue-100 text-blue-600"
+          }`}
+        >
+          {isCreator ? "Verified" : "Live"}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <main className="pt-24">
@@ -128,11 +197,11 @@ export default function Home() {
             {/* CTA */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link
-  to="/work-with-us"
-  className="px-6 py-3 bg-blue-500 text-white rounded-full font-medium text-center hover:bg-blue-600 transition"
->
-  Work With Thrive
-</Link>
+                to="/work-with-us"
+                className="px-6 py-3 bg-blue-500 text-white rounded-full font-medium text-center hover:bg-blue-600 transition"
+              >
+                Work With Thrive
+              </Link>
 
               <Link
                 to="/join-creator"
@@ -156,159 +225,49 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Visual */}
-          <motion.div
-            onMouseMove={handleMouseMove}
-            className="relative w-full rounded-3xl overflow-hidden p-4 md:p-6 bg-gradient-to-br from-blue-50 to-blue-100"
-          >
-            {/* 🌊 Wavy Background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-blue-100/40 to-blue-200/40"
-              animate={{ x: ["0%", "20%", "0%"] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <div className="relative z-10 hidden md:flex justify-center gap-10 h-[420px] overflow-hidden">
+            {/* Top Fade */}
+            <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none" />
 
-            {/* ================= MOBILE VIEW ================= */}
-            <div className="relative z-10 md:hidden flex flex-col items-center gap-4 py-6">
-              {/* Creator */}
-              <motion.div
-                {...mobileFloat}
-                className="bg-white rounded-2xl shadow-md p-4 w-64 text-center"
-              >
-                <p className="text-xs text-gray-500">Creator</p>
+            {/* Bottom Fade */}
+            <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none" />
 
-                <motion.h4
-                  key={index}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="font-semibold text-gray-900 mt-1"
-                >
-                  {creators[index]}
-                </motion.h4>
-
-                <p className="text-xs text-gray-600 mt-1">Lifestyle • Reels</p>
-                <span className="inline-block mt-2 text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">
-                  Verified
-                </span>
-              </motion.div>
-
-              {/* Center */}
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="px-4 py-1 bg-blue-500 text-white text-xs rounded-full shadow"
-              >
-                Collaboration
-              </motion.div>
-
-              {/* Brand */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="bg-white rounded-2xl shadow-md p-4 w-64 text-center"
-              >
-                <p className="text-xs text-gray-500">Brand</p>
-                <motion.h4
-                  key={brandIndex}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="font-semibold text-gray-900 mt-1"
-                >
-                  {brands[brandIndex]}
-                </motion.h4>
-
-                <p className="text-xs text-gray-600 mt-1">Campaign: Reels</p>
-                <span className="inline-block mt-2 text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">
-                  Live
-                </span>
-              </motion.div>
-            </div>
-
-            {/* ================= DESKTOP VIEW ================= */}
-            <div className="relative z-10 hidden md:block h-80">
-              {/* Creator */}
-              <motion.div
-                style={{ x, y }}
-                animate={{ y: [0, -12, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute top-10 left-10 bg-white rounded-2xl shadow-md p-4 w-44"
-              >
-                <p className="text-xs text-gray-500">Creator</p>
-
-                <motion.h4
-                  key={index}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="font-semibold text-gray-900 mt-1"
-                >
-                  {creators[index]}
-                </motion.h4>
-
-                <p className="text-xs text-gray-600 mt-1">Lifestyle • Reels</p>
-                <span className="inline-block mt-2 text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">
-                  Verified
-                </span>
-              </motion.div>
-
-              {/* Brand */}
-              <motion.div
-                style={{ x, y }}
-                animate={{ y: [0, 12, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-12 right-10 bg-white rounded-2xl shadow-md p-4 w-44"
-              >
-                <p className="text-xs text-gray-500">Brand</p>
-                <motion.h4
-                  key={brandIndex}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="font-semibold text-gray-900 mt-1"
-                >
-                  {brands[brandIndex]}
-                </motion.h4>
-
-                <p className="text-xs text-gray-600 mt-1">Campaign: Reels</p>
-                <span className="inline-block mt-2 text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">
-                  Live
-                </span>
-              </motion.div>
-
-              {/* Center Badge */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: [1, 1.15, 1] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="px-4 py-2 bg-blue-500 text-white text-sm rounded-full shadow"
-                >
-                  Collaboration
-                </motion.div>
+            {/* COLUMN 1 */}
+            <div
+              ref={col1Ref}
+              className="w-56 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-6">
+                {[...creators, ...creators].map((creator, i) => (
+                  <Card key={i} type="creator" name={creator} />
+                ))}
               </div>
             </div>
-          </motion.div>
+
+            {/* COLUMN 2 */}
+            <div
+              ref={col2Ref}
+              className="w-56 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-6">
+                {[...brands, ...brands].map((brand, i) => (
+                  <Card key={i} type="brand" name={brand} />
+                ))}
+              </div>
+            </div>
+
+            {/* COLUMN 3 */}
+            <div
+              ref={col3Ref}
+              className="w-56 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-6">
+                {[...creators, ...creators].map((creator, i) => (
+                  <Card key={i} type="creator" name={creator} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -608,8 +567,8 @@ export default function Home() {
       <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
         <div className="max-w-xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold leading-snug">
-  Ready to Grow With Thrive?
-</h2>
+            Ready to Grow With Thrive?
+          </h2>
 
           <p className="mt-3 text-sm md:text-base text-blue-100">
             Let’s build meaningful creator partnerships and brand campaigns.
@@ -620,8 +579,6 @@ export default function Home() {
           >
             Work With Us
           </Link>
-
-          {/* Secondary CTA */}
           <Link
             to="/join-creator"
             className="inline-block mt-4 text-sm font-medium text-white underline underline-offset-4 hover:text-blue-200 transition"

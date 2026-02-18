@@ -9,17 +9,16 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-  <img
-    src={logo}
-    alt="Thrive Logo"
-    className="h-14 w-auto object-contain"
-  />
+          <img
+            src={logo}
+            alt="Thrive Logo"
+            className="h-14 w-auto object-contain"
+          />
 
-  <span className="text-3xl font-extrabold bg-gradient-to-r from-green-700 to-lime-500 bg-clip-text text-transparent">
-    Thrive
-  </span>
-</Link>
-
+          <span className="text-3xl font-extrabold bg-gradient-to-r from-green-700 to-lime-500 bg-clip-text text-transparent">
+            Thrive
+          </span>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
@@ -72,8 +71,8 @@ export default function Navbar() {
             {/* Header */}
             <div className="flex items-center justify-between mb-10">
               <span className="text-3xl font-extrabold bg-gradient-to-r from-green-700 to-lime-500 bg-clip-text text-transparent">
-    Thrive
-  </span>
+                Thrive
+              </span>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-2xl text-gray-600 hover:text-gray-900"
