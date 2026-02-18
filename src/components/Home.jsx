@@ -225,49 +225,73 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 hidden md:flex justify-center gap-10 h-[420px] overflow-hidden">
-            {/* Top Fade */}
-            <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none" />
+          {/* MOBILE VERSION */}
+<div className="relative flex md:hidden overflow-x-auto gap-6 px-4 py-8 no-scrollbar snap-x snap-mandatory">
+  {[...creators, ...brands, ...creators].map((item, i) => (
+    <div
+      key={i}
+      className="min-w-[260px] snap-center"
+    >
+      <Card
+        type={i % 2 === 0 ? "creator" : "brand"}
+        name={item}
+      />
+    </div>
+  ))}
+</div>
 
-            {/* Bottom Fade */}
-            <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none" />
+{/* DESKTOP VERSION */}
+<div className="relative hidden md:flex justify-center gap-12 h-[480px] py-10 overflow-hidden">
 
-            {/* COLUMN 1 */}
-            <div
-              ref={col1Ref}
-              className="w-56 h-full overflow-y-auto no-scrollbar"
-            >
-              <div className="flex flex-col gap-6">
-                {[...creators, ...creators].map((creator, i) => (
-                  <Card key={i} type="creator" name={creator} />
-                ))}
-              </div>
-            </div>
+  {/* Background Glow */}
+  <div className="absolute inset-0 flex justify-center">
+    <div className="w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full" />
+  </div>
 
-            {/* COLUMN 2 */}
-            <div
-              ref={col2Ref}
-              className="w-56 h-full overflow-y-auto no-scrollbar"
-            >
-              <div className="flex flex-col gap-6">
-                {[...brands, ...brands].map((brand, i) => (
-                  <Card key={i} type="brand" name={brand} />
-                ))}
-              </div>
-            </div>
+  {/* Top Fade */}
+  <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none" />
 
-            {/* COLUMN 3 */}
-            <div
-              ref={col3Ref}
-              className="w-56 h-full overflow-y-auto no-scrollbar"
-            >
-              <div className="flex flex-col gap-6">
-                {[...creators, ...creators].map((creator, i) => (
-                  <Card key={i} type="creator" name={creator} />
-                ))}
-              </div>
-            </div>
-          </div>
+  {/* Bottom Fade */}
+  <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none" />
+
+  {/* COLUMN 1 */}
+  <div
+    ref={col1Ref}
+    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+  >
+    <div className="flex flex-col gap-8">
+      {[...creators, ...creators].map((creator, i) => (
+        <Card key={i} type="creator" name={creator} />
+      ))}
+    </div>
+  </div>
+
+  {/* COLUMN 2 */}
+  <div
+    ref={col2Ref}
+    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+  >
+    <div className="flex flex-col gap-8">
+      {[...brands, ...brands].map((brand, i) => (
+        <Card key={i} type="brand" name={brand} />
+      ))}
+    </div>
+  </div>
+
+  {/* COLUMN 3 */}
+  <div
+    ref={col3Ref}
+    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+  >
+    <div className="flex flex-col gap-8">
+      {[...creators, ...creators].map((creator, i) => (
+        <Card key={i} type="creator" name={creator} />
+      ))}
+    </div>
+  </div>
+
+</div>
+
         </div>
       </section>
 
@@ -326,8 +350,6 @@ export default function Home() {
   "
             >
               <p className="text-xs text-gray-500">Creator Profile</p>
-
-              {/* 🔄 Auto-changing creator */}
               <div className="relative h-6 overflow-hidden mt-1">
                 <AnimatePresence mode="wait">
                   <motion.h4
