@@ -14,6 +14,7 @@ import WorkWithUs from "./components/WorkWithUs";
 import StartCampaign from "./components/Compaign";
 import CampaignThankYou from "./components/CompaignThankyou";
 import CreatorThankYou from "./components/CreatorThankyou";
+import Creators from "./components/Creators";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/creators" element={<Creators />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/join-creator" element={<JoinCreator />} />
           <Route path="/work-with-us" element={<WorkWithUs />} />
@@ -37,6 +39,7 @@ function App() {
           <Route path="/campaign-success" element={<CampaignThankYou />} />
           <Route path="/apply-success" element={<CreatorThankYou />} />
           <Route path="/apply-creator" element={<ApplyCreator />} />
+
         </Routes>
       </main>
 

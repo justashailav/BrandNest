@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import GrowthSections from "./GrowthSection";
+import { ROICalculator } from "./ROICalculator";
+import { IndustriesSection } from "./IndustriesSection";
+
 const creatorServices = [
   "Brand Deals",
   "Pricing Negotiation",
@@ -8,21 +12,24 @@ const creatorServices = [
   "Editing Support",
   "Campaign Management",
 ];
+
 const brandServices = [
   "Influencer Campaigns",
   "Creator Shortlisting",
   "Creative Production",
   "Campaign Execution",
   "Reporting & Insights",
+  "Ad Campaign Setup", // ✅ Added here
 ];
 
 export default function Services() {
   const [serviceIndex, setServiceIndex] = useState(0);
   const [brandServiceIndex, setBrandServiceIndex] = useState(0);
+
   useEffect(() => {
     const s = setInterval(
       () => setServiceIndex((p) => (p + 1) % creatorServices.length),
-      2200,
+      2200
     );
     return () => clearInterval(s);
   }, []);
@@ -30,10 +37,11 @@ export default function Services() {
   useEffect(() => {
     const i = setInterval(
       () => setBrandServiceIndex((p) => (p + 1) % brandServices.length),
-      2400,
+      2400
     );
     return () => clearInterval(i);
   }, []);
+
   return (
     <main className="pt-24">
       {/* HERO */}
@@ -43,8 +51,8 @@ export default function Services() {
             Our Services
           </h1>
           <p className="mt-4 text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
-            End-to-end creative, creator management, and influencer marketing
-            solutions built for growth.
+            End-to-end creative, creator management, influencer marketing, and
+            paid ad solutions built for growth.
           </p>
         </div>
       </section>
@@ -122,6 +130,18 @@ export default function Services() {
                 "Web graphics",
               ]}
             />
+
+            {/* ✅ NEW SERVICE */}
+            <ServiceCard
+              title="Ad Campaign Setup"
+              points={[
+                "Meta (Facebook & Instagram) ads",
+                "Google ads setup",
+                "Audience targeting",
+                "Ad creative guidance",
+                "Performance optimization",
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -129,7 +149,7 @@ export default function Services() {
       {/* FOR CREATORS */}
       <section className="bg-gray-50 py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-left">
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Services for Creators
             </h2>
@@ -154,160 +174,26 @@ export default function Services() {
             </Link>
           </div>
 
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-full h-full rounded-3xl overflow-hidden
-             bg-gradient-to-br from-blue-100 to-purple-100 p-6"
-          >
-            {/* 🌊 Soft moving background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-purple-200/40 to-blue-200/40"
-              animate={{ x: ["0%", "30%", "0%"] }}
-              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center gap-4">
-              {/* Floating Service Cards */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-md px-5 py-3"
-              >
-                <p className="text-xs text-gray-500">Service</p>
-
-                {/* 🔄 Auto-changing service */}
-                <div className="relative h-16 w-56 overflow-hidden mt-1">
-                  <AnimatePresence mode="wait">
-                    <motion.h4
-                      key={serviceIndex}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.35 }}
-                      className="absolute left-0 top-0 font-semibold text-gray-900"
-                    >
-                      {creatorServices[serviceIndex]}
-                    </motion.h4>
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-
-              {/* Secondary card */}
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="bg-white/70 backdrop-blur-xl rounded-xl shadow-sm px-4 py-2"
-              >
-                <motion.div
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="
-    bg-white/80 backdrop-blur-xl
-    rounded-full shadow-sm
-    px-5 py-2
-  "
-                >
-                  <p className="text-xs text-gray-600 whitespace-nowrap">
-                    Handled by Thrive
-                  </p>
-                </motion.div>
-              </motion.div>
-            </div>
-          </motion.div>
+          <AnimatedCard
+            index={serviceIndex}
+            services={creatorServices}
+            label="Service"
+            subtitle="Handled by Thrive"
+          />
         </div>
       </section>
 
       {/* FOR BRANDS */}
       <section className="py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="
-    relative w-full h-full rounded-3xl overflow-hidden
-    bg-gradient-to-br from-purple-100 to-blue-100
-    p-6 flex items-center justify-center
-  "
-          >
-            {/* 🌊 Soft animated background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-purple-200/40 via-blue-200/40 to-purple-200/40"
-              animate={{ x: ["0%", "30%", "0%"] }}
-              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <AnimatedCard
+            index={brandServiceIndex}
+            services={brandServices}
+            label="Brand Service"
+            subtitle="Managed end-to-end by Thrive"
+          />
 
-            {/* Content */}
-            <div className="relative z-10 flex flex-col items-center gap-4">
-              {/* Main Service Card */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-        bg-white/90 backdrop-blur-xl
-        rounded-2xl shadow-md
-        px-6 py-4 min-w-[240px]
-        flex flex-col items-center justify-center
-      "
-              >
-                <p className="text-xs text-gray-500">Brand Service</p>
-
-                {/* 🔄 Auto-changing service name */}
-                <div className="relative h-8 mt-2 overflow-hidden flex items-center justify-center">
-                  <AnimatePresence mode="wait">
-                    <motion.h4
-                      key={brandServiceIndex}
-                      initial={{ opacity: 0, y: 14 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -14 }}
-                      transition={{ duration: 0.35 }}
-                      className="absolute text-base font-semibold text-gray-900 whitespace-nowrap"
-                    >
-                      {brandServices[brandServiceIndex]}
-                    </motion.h4>
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-
-              {/* Supporting pill */}
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-        bg-white/80 backdrop-blur-xl
-        rounded-full shadow-sm
-        px-5 py-2
-      "
-              >
-                <p className="text-xs text-gray-600 whitespace-nowrap">
-                  Managed end-to-end by Thrive
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <div className="text-center md:text-left">
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Services for Brands
             </h2>
@@ -322,6 +208,7 @@ export default function Services() {
               <li>✔ Creative production</li>
               <li>✔ Campaign execution</li>
               <li>✔ Reporting & insights</li>
+              <li>✔ Ad campaign setup & optimization</li> {/* ✅ Added */}
             </ul>
 
             <Link
@@ -333,8 +220,10 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {/* CTA (FIXED FOR MOBILE) */}
+      <ROICalculator/>
+      <IndustriesSection/>
+      <GrowthSections/>
+      {/* CTA */}
       <section className="bg-blue-500 py-14 md:py-20 text-center text-white">
         <div className="max-w-xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold">
@@ -345,7 +234,6 @@ export default function Services() {
             Thrive has solutions built for both brands and creators.
           </p>
 
-          {/* Primary CTA */}
           <Link
             to="/work-with-us"
             className="block w-full mt-8 px-6 py-3 bg-white text-blue-500 rounded-full font-medium shadow-sm"
@@ -353,7 +241,6 @@ export default function Services() {
             Work With Us
           </Link>
 
-          {/* Secondary CTA */}
           <Link
             to="/join-creator"
             className="inline-block mt-4 text-sm font-medium underline underline-offset-4"
@@ -366,10 +253,10 @@ export default function Services() {
   );
 }
 
-/* CARD */
+/* PREMIUM CARD */
 function ServiceCard({ title, points }) {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+    <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100">
       <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
       <ul className="mt-4 space-y-2 text-sm text-gray-600">
         {points.map((point, index) => (
@@ -377,5 +264,43 @@ function ServiceCard({ title, points }) {
         ))}
       </ul>
     </div>
+  );
+}
+
+/* REUSABLE ANIMATED CARD */
+function AnimatedCard({ index, services, label, subtitle }) {
+  return (
+    <motion.div
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 6, repeat: Infinity }}
+      className="relative w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 p-6 flex items-center justify-center"
+    >
+      <div className="relative z-10 flex flex-col items-center gap-4">
+        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-md px-6 py-4 min-w-[240px] text-center">
+          <p className="text-xs text-gray-500">{label}</p>
+
+          <div className="relative h-8 mt-2 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.h4
+                key={index}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.35 }}
+                className="absolute text-base font-semibold text-gray-900 whitespace-nowrap"
+              >
+                {services[index]}
+              </motion.h4>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="bg-white/80 backdrop-blur-xl rounded-full shadow-sm px-5 py-2">
+          <p className="text-xs text-gray-600 whitespace-nowrap">
+            {subtitle}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
