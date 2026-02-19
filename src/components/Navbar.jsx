@@ -98,6 +98,9 @@ export default function Navbar() {
               <Link onClick={() => setIsOpen(false)} to="/projects">
                 Projects
               </Link>
+              <Link onClick={() => setIsOpen(false)} to="/creators">
+                Creators
+              </Link>
               <Link onClick={() => setIsOpen(false)} to="/contact">
                 Contact
               </Link>
