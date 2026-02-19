@@ -226,72 +226,63 @@ export default function Home() {
           </div>
 
           {/* MOBILE VERSION */}
-<div className="relative flex md:hidden overflow-x-auto gap-6 px-4 py-8 no-scrollbar snap-x snap-mandatory">
-  {[...creators, ...brands, ...creators].map((item, i) => (
-    <div
-      key={i}
-      className="min-w-[260px] snap-center"
-    >
-      <Card
-        type={i % 2 === 0 ? "creator" : "brand"}
-        name={item}
-      />
-    </div>
-  ))}
-</div>
+          <div className="relative flex md:hidden overflow-x-auto gap-6 px-4 py-8 no-scrollbar snap-x snap-mandatory">
+            {[...creators, ...brands, ...creators].map((item, i) => (
+              <div key={i} className="min-w-[260px] snap-center">
+                <Card type={i % 2 === 0 ? "creator" : "brand"} name={item} />
+              </div>
+            ))}
+          </div>
 
-{/* DESKTOP VERSION */}
-<div className="relative hidden md:flex justify-center gap-12 h-[480px] py-10 overflow-hidden">
+          {/* DESKTOP VERSION */}
+          <div className="relative hidden md:flex justify-center gap-12 h-[480px] py-10 overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute inset-0 flex justify-center">
+              <div className="w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full" />
+            </div>
 
-  {/* Background Glow */}
-  <div className="absolute inset-0 flex justify-center">
-    <div className="w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full" />
-  </div>
+            {/* Top Fade */}
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none" />
 
-  {/* Top Fade */}
-  <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none" />
+            {/* Bottom Fade */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none" />
 
-  {/* Bottom Fade */}
-  <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none" />
+            {/* COLUMN 1 */}
+            <div
+              ref={col1Ref}
+              className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-8">
+                {[...creators, ...creators].map((creator, i) => (
+                  <Card key={i} type="creator" name={creator} />
+                ))}
+              </div>
+            </div>
 
-  {/* COLUMN 1 */}
-  <div
-    ref={col1Ref}
-    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
-  >
-    <div className="flex flex-col gap-8">
-      {[...creators, ...creators].map((creator, i) => (
-        <Card key={i} type="creator" name={creator} />
-      ))}
-    </div>
-  </div>
+            {/* COLUMN 2 */}
+            <div
+              ref={col2Ref}
+              className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-8">
+                {[...brands, ...brands].map((brand, i) => (
+                  <Card key={i} type="brand" name={brand} />
+                ))}
+              </div>
+            </div>
 
-  {/* COLUMN 2 */}
-  <div
-    ref={col2Ref}
-    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
-  >
-    <div className="flex flex-col gap-8">
-      {[...brands, ...brands].map((brand, i) => (
-        <Card key={i} type="brand" name={brand} />
-      ))}
-    </div>
-  </div>
-
-  {/* COLUMN 3 */}
-  <div
-    ref={col3Ref}
-    className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
-  >
-    <div className="flex flex-col gap-8">
-      {[...creators, ...creators].map((creator, i) => (
-        <Card key={i} type="creator" name={creator} />
-      ))}
-    </div>
-  </div>
-
-</div>
-
+            {/* COLUMN 3 */}
+            <div
+              ref={col3Ref}
+              className="relative z-10 w-60 h-full overflow-y-auto no-scrollbar"
+            >
+              <div className="flex flex-col gap-8">
+                {[...creators, ...creators].map((creator, i) => (
+                  <Card key={i} type="creator" name={creator} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

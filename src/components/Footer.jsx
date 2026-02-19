@@ -59,7 +59,7 @@ const Footer = () => {
           <p className="text-white text-sm font-medium">Connect</p>
 
           <ul className="mt-3 space-y-2 text-sm">
-            <li className="text-gray-400">📩 thrive.creatorshub@gmail.com</li>
+            <li className="text-gray-400">📩thrive.creatorshub@gmail.com</li>
             <li className="text-gray-400">📍 India</li>
           </ul>
 
