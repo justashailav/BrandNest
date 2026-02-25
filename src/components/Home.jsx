@@ -11,7 +11,7 @@ import {
 import { useEffect, useState } from "react";
 
 const creators = [
-  "@creatorname",
+  "@__anchiii",
   "@fashionqueen",
   "@lifestyleguru",
   "@reelstar",
